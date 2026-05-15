@@ -111,13 +111,13 @@ function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: numbe
               {t.avatar}
             </Avatar>
             <Box>
-              <Typography variant="subtitle2" fontWeight={700}>
+              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
                 {t.name}
               </Typography>
               <Typography variant="caption" color="text.secondary">
                 {t.role}
               </Typography>
-              <Box mt={0.5}>
+              <Box sx={{ mt: 0.5 }}>
                 <Rating value={t.rating} readOnly size="small" sx={{ color: t.color }} />
               </Box>
             </Box>

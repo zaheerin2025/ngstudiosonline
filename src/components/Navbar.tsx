@@ -151,17 +151,19 @@ export default function Navbar() {
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        PaperProps={{
-          sx: {
-            width: 280,
-            background: '#0D0D2B',
-            borderLeft: '1px solid rgba(124, 58, 237, 0.2)',
-            p: 2,
+        slotProps={{
+          paper: {
+            sx: {
+              width: 280,
+              background: '#0D0D2B',
+              borderLeft: '1px solid rgba(124, 58, 237, 0.2)',
+              p: 2,
+            },
           },
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-          <Typography variant="h6" fontWeight={800}>Menu</Typography>
+          <Typography variant="h6" sx={{ fontWeight: 800 }}>Menu</Typography>
           <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: 'text.secondary' }}>
             <CloseIcon />
           </IconButton>
@@ -173,7 +175,7 @@ export default function Navbar() {
                 onClick={() => handleNavClick(link.href)}
                 sx={{ borderRadius: 2, mb: 0.5, '&:hover': { bgcolor: 'rgba(124, 58, 237, 0.1)' } }}
               >
-                <ListItemText primary={link.label} primaryTypographyProps={{ fontWeight: 500 }} />
+                <ListItemText primary={link.label} slotProps={{ primary: { style: { fontWeight: 500 } } }} />
               </ListItemButton>
             </ListItem>
           ))}

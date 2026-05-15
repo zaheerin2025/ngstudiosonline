@@ -140,7 +140,7 @@ export default function ContactSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <Box sx={{ mb: 5 }}>
-                <Typography variant="h5" fontWeight={700} mb={1.5}>
+                <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
                   Ready to launch your
                   <Box component="span" sx={{ color: 'primary.light' }}> next project?</Box>
                 </Typography>
@@ -175,10 +175,10 @@ export default function ContactSection() {
                       {info.icon}
                     </Box>
                     <Box>
-                      <Typography variant="caption" color="text.secondary" fontWeight={600} sx={{ letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                         {info.label}
                       </Typography>
-                      <Typography variant="body2" fontWeight={500} mt={0.25}>
+                      <Typography variant="body2" sx={{ fontWeight: 500, mt: 0.25 }}>
                         {info.value}
                       </Typography>
                     </Box>

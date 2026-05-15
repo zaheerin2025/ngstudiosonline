@@ -120,7 +120,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           >
             {service.icon}
           </Box>
-          <Typography variant="h5" fontWeight={700} mb={2}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
             {service.title}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.8 }}>

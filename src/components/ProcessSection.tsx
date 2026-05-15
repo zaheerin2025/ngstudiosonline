@@ -75,8 +75,7 @@ function ProcessStep({ step, index, totalSteps }: { step: typeof steps[0]; index
             }}
           >
             <Typography
-              fontWeight={800}
-              sx={{ color: step.color, fontSize: { xs: '1rem', md: '1.3rem' } }}
+              sx={{ fontWeight: 800, color: step.color, fontSize: { xs: '1rem', md: '1.3rem' } }}
             >
               {step.step}
             </Typography>
@@ -99,7 +98,7 @@ function ProcessStep({ step, index, totalSteps }: { step: typeof steps[0]; index
             },
           }}
         >
-          <Typography variant="h5" fontWeight={700} mb={1.5} sx={{ color: 'text.primary' }}>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5, color: 'text.primary' }}>
             {step.title}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.8 }}>

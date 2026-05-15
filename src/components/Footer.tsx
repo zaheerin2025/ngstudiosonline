@@ -75,7 +75,7 @@ export default function Footer() {
               Have a Project in Mind?
               <Box component="span" sx={{ display: 'block' }}>Let's Make It Real.</Box>
             </Typography>
-            <Typography variant="body1" color="text.secondary" mb={4} sx={{ maxWidth: 480, mx: 'auto' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 480, mx: 'auto' }}>
               Join 150+ companies that trusted NG Studios to build their digital future.
             </Typography>
             <Button
@@ -108,7 +108,7 @@ export default function Footer() {
                   fontWeight: 900, fontSize: '1rem', color: '#fff',
                   boxShadow: '0 4px 16px rgba(124, 58, 237, 0.5)',
                 }}>NG</Box>
-                <Typography variant="h6" fontWeight={800}>
+                <Typography variant="h6" sx={{ fontWeight: 800 }}>
                   NG<Box component="span" sx={{ color: 'primary.main' }}> Studios</Box>
                 </Typography>
               </Box>

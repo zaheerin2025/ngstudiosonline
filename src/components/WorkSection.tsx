@@ -110,7 +110,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             backgroundImage: 'radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(0,0,0,0.2) 0%, transparent 60%)',
             mixBlendMode: 'overlay',
           }} />
-          <Typography variant="h6" fontWeight={900} sx={{ color: 'rgba(255,255,255,0.4)', fontSize: '4.5rem', letterSpacing: '-0.05em', userSelect: 'none', mixBlendMode: 'overlay' }}>
+          <Typography variant="h6" sx={{ fontWeight: 900, color: 'rgba(255,255,255,0.4)', fontSize: '4.5rem', letterSpacing: '-0.05em', userSelect: 'none', mixBlendMode: 'overlay' }}>
             {project.title.charAt(0)}{project.title.split(' ')[0].charAt(1)}
           </Typography>
           {/* Metric badge */}
@@ -145,7 +145,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </Box>
 
         <CardContent sx={{ p: 3 }}>
-          <Typography variant="h6" fontWeight={700} mb={1.5}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
             {project.title}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.75 }}>

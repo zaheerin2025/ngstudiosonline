@@ -118,7 +118,7 @@ function TechCategoryCard({ cat, index }: { cat: typeof techCategories[0]; index
               <Typography sx={{ fontSize: '1.1rem', lineHeight: 1, minWidth: 24, textAlign: 'center' }}>
                 {tech.icon}
               </Typography>
-              <Typography variant="body2" fontWeight={500}>
+              <Typography variant="body2" sx={{ fontWeight: 500 }}>
                 {tech.name}
               </Typography>
             </Box>

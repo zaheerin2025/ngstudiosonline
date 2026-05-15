@@ -218,7 +218,7 @@ export default function HeroSection() {
                   >
                     {stat.value}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" fontWeight={500}>
+                  <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
                     {stat.label}
                   </Typography>
                 </motion.div>
