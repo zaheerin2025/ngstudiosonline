@@ -175,7 +175,7 @@ To exercise these rights, users may contact us using the information below.
 
 # 11. Account Deletion Requests
 
-Users can request deletion of their account and associated data by contacting us through email.
+%Users can request deletion of their account and associated data by contacting us through email.
 
 After verification, deletion requests will be processed within a reasonable timeframe unless data retention is required for legal, fraud prevention, or security purposes.
 
@@ -216,5 +216,3 @@ If you have any questions, concerns, or requests regarding this Privacy Policy, 
 # 15. Consent
 
 By using **Digital Property Agent**, you acknowledge that you have read, understood, and agreed to this Privacy Policy and our data handling practices.
-
----

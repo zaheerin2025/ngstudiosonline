@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ThemeRegistry from '@/theme/ThemeRegistry';
 import './globals.css';
+import verificationConfig from '../../verification.config.json';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -40,6 +41,16 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NG Studios — Web & Mobile App Development Agency',
     description: 'Building exceptional digital products that scale. From MVPs to enterprise platforms.',
+  },
+  verification: {
+    google: verificationConfig.google || undefined,
+    yandex: verificationConfig.yandex || undefined,
+    yahoo: verificationConfig.yahoo || undefined,
+    other: {
+      ...verificationConfig.other,
+      ...(verificationConfig.bing ? { 'msvalidate.01': [verificationConfig.bing] } : {}),
+      ...(verificationConfig.facebook ? { 'facebook-domain-verification': [verificationConfig.facebook] } : {}),
+    },
   },
 };
 
