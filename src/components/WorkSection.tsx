@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent, Chip, Avatar } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, Chip, Avatar, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import AndroidIcon from '@mui/icons-material/Android';
 
 
 const projects = [
@@ -231,6 +232,40 @@ export default function WorkSection() {
             </Grid>
           ))}
         </Grid>
+
+        <Box sx={{ mt: 8, textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Button
+              component="a"
+              href="https://play.google.com/store/apps/dev?id=6338053508326700946"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              size="large"
+              startIcon={<AndroidIcon />}
+              sx={{
+                borderColor: 'rgba(6, 182, 212, 0.4)',
+                color: 'secondary.light',
+                '&:hover': {
+                  borderColor: '#06B6D4',
+                  background: 'rgba(6, 182, 212, 0.05)',
+                },
+                px: 5,
+                py: 1.75,
+                borderRadius: '30px',
+                fontWeight: 600,
+                fontSize: '1rem',
+                textTransform: 'none',
+              }}
+            >
+              View Our Mobile Apps on Google Play Store
+            </Button>
+          </motion.div>
+        </Box>
       </Container>
     </Box>
   );

@@ -26,19 +26,19 @@ const contactInfo = [
   {
     icon: <EmailIcon />,
     label: 'Email',
-    value: 'hello@ngstudios.online',
+    value: 'zaheerin2024@gmail.com',
     color: '#7C3AED',
   },
   {
     icon: <PhoneIcon />,
     label: 'Phone',
-    value: '+92 300 000 0000',
+    value: '+92 311 0671019',
     color: '#06B6D4',
   },
   {
     icon: <LocationOnIcon />,
     label: 'Location',
-    value: 'Pakistan — Remote Worldwide',
+    value: 'Lahore, Pakistan — Remote',
     color: '#10B981',
   },
   {
@@ -53,6 +53,7 @@ export default function ContactSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: '', email: '', company: '', service: '', budget: '', message: '',
   });
@@ -61,14 +62,39 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setErrorMsg(null);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/zaheerin2024@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: form.name,
+          Email: form.email,
+          Company: form.company,
+          Service: form.service,
+          Budget: form.budget,
+          Message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setForm({ name: '', email: '', company: '', service: '', budget: '', message: '' });
+      } else {
+        setErrorMsg('Could not submit the form. Please try again or email us directly.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setErrorMsg('A network error occurred. Please check your connection and try again.');
+    } finally {
       setLoading(false);
-      setSuccess(true);
-      setForm({ name: '', email: '', company: '', service: '', budget: '', message: '' });
-    }, 1800);
+    }
   };
 
   const inputSx = {
@@ -304,6 +330,17 @@ export default function ContactSection() {
       >
         <Alert severity="success" variant="filled" onClose={() => setSuccess(false)}>
           🚀 Message sent! We'll get back to you within 24 hours.
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={!!errorMsg}
+        autoHideDuration={6000}
+        onClose={() => setErrorMsg(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert severity="error" variant="filled" onClose={() => setErrorMsg(null)}>
+          ❌ {errorMsg}
         </Alert>
       </Snackbar>
     </Box>

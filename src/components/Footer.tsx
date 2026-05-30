@@ -8,6 +8,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import PhoneIcon from '@mui/icons-material/Phone';
+import AndroidIcon from '@mui/icons-material/Android';
 
 const footerLinks = {
   Services: [
@@ -118,13 +120,17 @@ export default function Footer() {
               </Typography>
               <Box sx={{ display: 'flex', gap: 1 }}>
                 {[
-                  { icon: <LinkedInIcon />, label: 'LinkedIn' },
-                  { icon: <TwitterIcon />, label: 'Twitter' },
-                  { icon: <GitHubIcon />, label: 'GitHub' },
-                  { icon: <DraftsIcon />, label: 'Email' },
+                  { icon: <DraftsIcon />, label: 'Email', url: 'mailto:zaheerin2024@gmail.com' },
+                  { icon: <PhoneIcon />, label: 'Phone', url: 'tel:+923110671019' },
+                  { icon: <AndroidIcon />, label: 'Play Store', url: 'https://play.google.com/store/apps/dev?id=6338053508326700946' },
+                  { icon: <GitHubIcon />, label: 'GitHub', url: 'https://github.com/zaheerin2025' },
                 ].map((social) => (
                   <IconButton
                     key={social.label}
+                    component="a"
+                    href={social.url}
+                    target={social.label === 'Email' || social.label === 'Phone' ? undefined : '_blank'}
+                    rel={social.label === 'Email' || social.label === 'Phone' ? undefined : 'noopener noreferrer'}
                     size="small"
                     aria-label={social.label}
                     sx={{
