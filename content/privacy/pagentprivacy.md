@@ -6,7 +6,7 @@ description: Privacy Policy for Digital Property Agent mobile application.
 
 # Privacy Policy
 
-**Last Updated: May 15, 2026**
+**Last Updated: June 05, 2026**
 
 Welcome to **Digital Property Agent** (“App”, “Service”, “We”, “Us”, or “Our”), operated by **NG Studios**.
 
